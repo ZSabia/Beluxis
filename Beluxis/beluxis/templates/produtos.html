@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{% block title %}Catálogo de Produtos{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4 text-primary">Catálogo de Produtos</h1>
+<p class="lead">Aqui estão os nossos artigos disponíveis para compra:</p>
+
+<table class="table table-striped table-hover shadow-sm">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Estoque</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Produto Exemplo A</td>
+            <td>R$ 49.99</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Produto Exemplo B</td>
+            <td>R$ 99.50</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Produto Exemplo C</td>
+            <td>R$ 25.00</td>
+            <td>22</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="mt-4">
+    <a href="{{ url_for('homepage') }}" class="btn btn-outline-secondary">Voltar à página inicial</a>
+</div>
+
+{% endblock %}

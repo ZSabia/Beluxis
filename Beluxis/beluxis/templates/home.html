@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+    <div class="jumbotron text-center bg-light p-5 rounded shadow">
+        <h1 class="display-4">Bem-vindo(a) ao Beluxis!</h1>
+        <p class="lead">O seu destino para os melhores produtos e serviços online.</p>
+        <hr class="my-4">
+        <p>Explore as nossas páginas e comece a sua jornada. Use os links abaixo!</p>
+        <a class="btn btn-success btn-lg" href="{{ url_for('produtos') }}" role="button">Ver Produtos</a>
+    </div>
+
+    <div class="row mt-5">
+        
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm h-100"> 
+                <div class="card-body">
+                    <h5 class="card-title text-primary">🛍️ Explore os Produtos</h5>
+                    <p class="card-text">Confira o nosso vasto catálogo de itens em stock.</p>
+                    <a href="{{ url_for('produtos') }}" class="btn btn-sm btn-outline-primary">Ver Catálogo</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-info">👤 Seu Perfil</h5>
+                    <p class="card-text">Acesse o seu perfil e gerencie as suas informações e pedidos.</p>
+                    <a href="{{ url_for('perfil', usuario='seu_usuario') }}" class="btn btn-sm btn-outline-info">Acessar Perfil</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary">📞 Fale Conosco</h5>
+                    <p class="card-text">Entre em contacto com a nossa equipa de suporte.</p>
+                    <a href="{{ url_for('contato') }}" class="btn btn-sm btn-outline-secondary">Contato</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
