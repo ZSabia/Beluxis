@@ -2,10 +2,6 @@
 
 # Beluxis
 
-Bem-vindo(a) ao Beluxis!
-
-O seu salão de cabeleireira de confiança. Produtos e serviços de beleza para você.
-
 Beluxis é um site que une e facilita o atendimento de salões de beleza. Permite o cadastro de clientes, produtos, serviços, agendamentos e inclui um painel administrativo para controle.
 
 ## Funcionalidades
