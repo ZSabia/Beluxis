@@ -1,0 +1,177 @@
+/* Estilos personalizados para o Beluxis */
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to bottom, #FADADD 0%, #FFF8DC 100%);
+    color: #36454F;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #36454F;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.navbar-brand::first-letter {
+    color: #FFD700;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.jumbotron {
+    background: linear-gradient(135deg, #FADADD 0%, #FFF8DC 100%);
+    color: #36454F;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-custom {
+    border-radius: 25px;
+    background: linear-gradient(135deg, #FFD700 0%, #E6C200 100%);
+    color: #36454F;
+    border: 2px solid #FFD700;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(135deg, #E6C200 0%, #FFD700 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+.table {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #FFD700;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.btn {
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+    border-color: #0066CC;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0052A3 0%, #0066CC 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.5);
+}
+
+.btn-outline-primary {
+    color: #0066CC;
+    border-color: #0066CC;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0066CC;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+.btn-outline-success {
+    color: #FFD700;
+    border-color: #FFD700;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: #FFD700;
+    color: #36454F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn-outline-info {
+    color: #0066CC;
+    border-color: #0066CC;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-info:hover {
+    background-color: #0066CC;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+.btn-outline-danger {
+    color: #36454F;
+    border-color: #36454F;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    background-color: #36454F;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(54, 69, 79, 0.3);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #36454F;
+    font-weight: 300;
+}
+
+p.lead {
+    color: #6c757d;
+}
+.calendar-day { height: 120px; vertical-align: top; } .day-number { font-weight: bold; margin-bottom: 5px; } .events { font-size: 0.8em; } .has-events { background-color: #f8f9fa; }

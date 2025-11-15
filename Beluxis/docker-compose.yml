@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: beluxis
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: beluxis
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    command: gunicorn -w 2 -b 0.0.0.0:8000 main:app
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://beluxis:secret@db:5432/beluxis
+      FLASK_ENV: development
+      SECRET_KEY: dev-secret
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+volumes:
+  pgdata:

@@ -1,0 +1,73 @@
+{% extends "index.html" %}
+
+{% block title %}Registro - Beluxis{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="text-center mb-4">Registrar Conta</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.usuario.label(class="form-label") }}
+                {{ form.usuario(class="form-control") }}
+                {% if form.usuario.errors %}
+                    <div class="text-danger">
+                        {% for error in form.usuario.errors %}
+                            <small>{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control") }}
+                {% if form.email.errors %}
+                    <div class="text-danger">
+                        {% for error in form.email.errors %}
+                            <small>{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form.senha.label(class="form-label") }}
+                {{ form.senha(class="form-control") }}
+                {% if form.senha.errors %}
+                    <div class="text-danger">
+                        {% for error in form.senha.errors %}
+                            <small>{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form.confirmar_senha.label(class="form-label") }}
+                {{ form.confirmar_senha(class="form-control") }}
+                {% if form.confirmar_senha.errors %}
+                    <div class="text-danger">
+                        {% for error in form.confirmar_senha.errors %}
+                            <small>{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form.avatar.label(class="form-label") }}
+                {{ form.avatar(class="form-select") }}
+                {% if form.avatar.errors %}
+                    <div class="text-danger">
+                        {% for error in form.avatar.errors %}
+                            <small>{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            {{ form.submit(class="btn btn-primary w-100") }}
+        </form>
+        <p class="text-center mt-3">
+            Já tem uma conta? <a href="{{ url_for('login') }}">Faça login</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

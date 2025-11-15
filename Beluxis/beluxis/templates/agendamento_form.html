@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block title %}{% if agendamento %}Editar{% else %}Novo{% endif %} Agendamento{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header">
+                <h4>{% if agendamento %}Editar{% else %}Novo{% endif %} Agendamento</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="servico_id" class="form-label">Serviço</label>
+                        <select class="form-control" id="servico_id" name="servico_id" required>
+                            <option value="">Selecione um serviço</option>
+                            {% for s in servicos %}
+                            <option value="{{ s.id }}" {% if agendamento and agendamento.servico_id == s.id %}selected{% endif %}>{{ s.nome }} - R$ {{ "{:.2f}".format(s.preco) }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="data_hora" class="form-label">Data e Hora</label>
+                        <input type="datetime-local" class="form-control" id="data_hora" name="data_hora" value="{% if agendamento %}{{ agendamento.data_hora.strftime('%Y-%m-%dT%H:%M') }}{% endif %}" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <a href="{{ url_for('perfil') }}" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block title %}Catálogo de Serviços{% endblock %}
+
+{% block content %}
+<h1 class="mb-4 text-primary">Nossos Serviços</h1>
+<p class="lead">Agende seus serviços de beleza conosco:</p>
+
+<div class="row">
+    {{ servicos_html|safe }}
+</div>
+
+<div class="mt-4">
+    <a href="{{ url_for('homepage') }}" class="btn btn-outline-secondary">Voltar à página inicial</a>
+</div>
+{% endblock %}

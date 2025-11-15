@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block title %}Calendário de Agendamentos{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4 text-primary">Calendário de Agendamentos</h1>
+
+    {{ calendario_html|safe }}
+
+    <div class="mt-4">
+        <a href="{{ url_for('homepage') }}" class="btn btn-outline-secondary">Voltar à página inicial</a>
+    </div>
+</div>
+{% endblock %}

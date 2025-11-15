@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+
+{% block title %}{% if servico %}Editar{% else %}Novo{% endif %} Serviço{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h1 class="mb-4 text-primary">{% if servico %}Editar{% else %}Novo{% endif %} Serviço</h1>
+
+        <form method="POST">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" value="{{ servico.nome if servico else '' }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição</label>
+                <textarea class="form-control" id="descricao" name="descricao" rows="3" required>{{ servico.descricao if servico else '' }}</textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="preco" class="form-label">Preço (R$)</label>
+                <input type="text" class="form-control" id="preco" name="preco" value="{{ servico.preco if servico else '' }}" placeholder="0.00" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="duracao" class="form-label">Duração (minutos)</label>
+                <input type="number" class="form-control" id="duracao" name="duracao" value="{{ servico.duracao if servico else '' }}" min="1" required>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="{{ url_for('admin_servicos') }}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

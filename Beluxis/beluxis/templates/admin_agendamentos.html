@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block title %}Administração de Agendamentos{% endblock %}
+
+{% block content %}
+<h1 class="mb-4 text-primary">Administração de Agendamentos</h1>
+<p class="lead">Gerencie os agendamentos pendentes: aprove ou negue.</p>
+
+<table class="table table-striped table-hover shadow-sm">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Cliente</th>
+            <th scope="col">Serviço</th>
+            <th scope="col">Data/Hora</th>
+            <th scope="col">Status</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ agendamentos_html|safe }}
+    </tbody>
+</table>
+
+<div class="mt-4">
+    <a href="{{ url_for('homepage') }}" class="btn btn-outline-secondary">Voltar à página inicial</a>
+</div>
+{% endblock %}

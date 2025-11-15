@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block title %}{% if produto %}Editar Produto{% else %}Novo Produto{% endif %}{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4 text-primary">{% if produto %}Editar Produto{% else %}Novo Produto{% endif %}</h1>
+
+<form action="{% if produto %}{{ url_for('editar_produto', id=produto.id) }}{% else %}{{ url_for('novo_produto') }}{% endif %}" method="post">
+    <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <input class="form-control" type="text" name="nome" value="{% if produto %}{{ produto.nome }}{% endif %}" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Descrição</label>
+        <textarea class="form-control" name="descricao" rows="4" required>{% if produto %}{{ produto.descricao }}{% endif %}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Preço (ex: 49.99)</label>
+        <input class="form-control" type="text" name="preco" value="{% if produto %}{{ produto.preco }}{% else %}0.00{% endif %}" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Estoque</label>
+        <input class="form-control" type="number" name="estoque" value="{% if produto %}{{ produto.estoque }}{% else %}0{% endif %}" min="0">
+    </div>
+
+    <button class="btn btn-primary" type="submit">{% if produto %}Atualizar{% else %}Criar{% endif %}</button>
+    <a class="btn btn-outline-secondary" href="{{ url_for('admin_produtos') }}">Cancelar</a>
+</form>
+
+{% endblock %}
