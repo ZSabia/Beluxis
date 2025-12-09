@@ -5,9 +5,9 @@ from sqlalchemy import Numeric
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
-class User(db.Model):
-    __tablename__ = 'user'
-    id = db.Column(db.Integer, primary_key=True)
+//class User(db.Model):
+//    __tablename__ = 'user'
+//    id = db.Column(db.Integer, primary_key=True)
 
 class Cliente(db.Model, UserMixin):
     __tablename__ = 'cliente'
